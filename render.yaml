@@ -1,5 +1,3 @@
-# render.yaml — deploys the FastAPI backend on Render.
-# In Render: New + → Blueprint → connect this repo. It reads this file.
 services:
   - type: web
     name: euromotion-backend
@@ -8,9 +6,11 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn backend.main:app --host 0.0.0.0 --port $PORT
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
       - key: AI_PROVIDER
         value: mistral
       - key: MISTRAL_API_KEY
-        sync: false        # set this secret in the Render dashboard
+        sync: false
       - key: ALLOWED_ORIGINS
-        sync: false        # e.g. https://your-frontend.vercel.app
+        sync: false
