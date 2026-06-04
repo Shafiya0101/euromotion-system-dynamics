@@ -67,7 +67,6 @@ You can also use the **↶ Undo / ↷ Redo / ⟲ Reset** buttons in the top bar.
 |-------------------|-------------------------------------------|----------------------------------------|
 | `AI_PROVIDER`     | `mistral`                                 | `mistral` or `openai`                  |
 | `MISTRAL_API_KEY` | —                                         | required if provider is mistral        |
-| `OPENAI_API_KEY`  | —                                         | required if provider is openai         |
 | `ALLOWED_ORIGINS` | `http://localhost:5173,http://localhost:3000` | comma-separated; `*` allows all    |
 
 
