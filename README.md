@@ -78,4 +78,4 @@ or sleep — fine for a demo.
 `frontend`**. Add env var `VITE_API_BASE = https://<your-backend>.onrender.com`.
 Build command `npm run build`, output `dist`.
 
-> ⚠️ Never commit your real `.env`. Keys go in the host's dashboard.
+
