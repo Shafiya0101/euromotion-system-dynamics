@@ -69,13 +69,4 @@ You can also use the **↶ Undo / ↷ Redo / ⟲ Reset** buttons in the top bar.
 
 ## Deploy
 
-**Backend → Render** (free): push this repo, then New + → Blueprint (uses
-`render.yaml`). Set `MISTRAL_API_KEY` and `ALLOWED_ORIGINS` (your frontend URL)
-in the dashboard. Note: the model state lives in memory, so it resets on redeploy
-or sleep — fine for a demo.
-
-**Frontend → Vercel** (free): New Project → import repo → **Root Directory =
-`frontend`**. Add env var `VITE_API_BASE = https://<your-backend>.onrender.com`.
-Build command `npm run build`, output `dist`.
-
 
