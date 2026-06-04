@@ -1,5 +1,8 @@
 # EuroMotion System Dynamics
 
+🔗 **Live app:** https://euromotion-system-dynamics.vercel.app
+
+
 Interactive supply-chain simulator with an AI agent that edits the model from
 natural language. **FastAPI** backend (a generic stock-and-flow simulator) +
 **React/Vite** frontend (sliders, live chart, interactive graph, chat).
@@ -67,6 +70,34 @@ You can also use the **↶ Undo / ↷ Redo / ⟲ Reset** buttons in the top bar.
 | `OPENAI_API_KEY`  | —                                         | required if provider is openai         |
 | `ALLOWED_ORIGINS` | `http://localhost:5173,http://localhost:3000` | comma-separated; `*` allows all    |
 
-## Deploy
 
+## 🚀 Deployment
 
+This project runs as two independent services that auto-redeploy on every push to `main`.
+
+| Layer | Platform | Live URL |
+| :--- | :--- | :--- |
+| 🖥️ Frontend | Vercel | **[euromotion-system-dynamics.vercel.app](https://euromotion-system-dynamics.vercel.app)** |
+| ⚙️ Backend | Render | **[euromotion-backend.onrender.com](https://euromotion-backend.onrender.com)** |
+
+### ⚙️ Backend — Render
+
+Deployed from `render.yaml` via **New + → Blueprint**.
+
+| Setting | Value |
+| :--- | :--- |
+| Build | `pip install -r requirements.txt` |
+| Start | `uvicorn backend.main:app --host 0.0.0.0 --port $PORT` |
+| Runtime | Python `3.12.8` |
+
+**Environment variables**
+- `AI_PROVIDER` — `mistral`
+- `MISTRAL_API_KEY` — *set in the Render dashboard (never committed)*
+- `ALLOWED_ORIGINS` — the frontend URL
+
+### 🖥️ Frontend — Vercel
+
+Imported from this repo with **Root Directory** set to `frontend` (framework auto-detected as Vite).
+
+**Environment variable**
+- `VITE_API_BASE` — the backend URL
